@@ -148,7 +148,10 @@ dtb-$(CONFIG_ARCH_MESON) += meson-sm1-x96-max-plus-q2.dtb
 dtb-$(CONFIG_ARCH_MESON) += meson-sc2-s905x4-ah212.dtb
 dtb-$(CONFIG_ARCH_MESON) += meson-sc2-s905x4-gbit.dtb
 dtb-$(CONFIG_ARCH_MESON) += meson-sc2-s905x4-akari-ax810.dtb
+#dtb-$(CONFIG_ARCH_MESON) += meson-g12a-b860h-v5.dtb
+$(obj)/meson-g12a-b860h-v5.dtb: $(src)/meson-g12a-b860h-v5.dtb
+	@cp $< $@
 
-$(shell cp -f $(src)/meson-g12a-b860h-v5.dtb $(obj)/meson-g12a-b860h-v5.dtb 2>/dev/null || true)
+targets += meson-g12a-b860h-v5.dtb
 
 subdir-y	:= $(dtb-dirs) overlay
